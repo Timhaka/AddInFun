@@ -46,5 +46,24 @@ namespace AddInFunWeb.Controllers
 
             return View();
         }
+
+        public ActionResult CreateList()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateList(string s)
+        {
+            if (ModelState.IsValid)
+            {
+
+
+
+            }
+
+            return View(s);
+        }
     }
 }

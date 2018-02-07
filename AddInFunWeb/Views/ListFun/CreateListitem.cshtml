@@ -1,0 +1,54 @@
+﻿@using Microsoft.SharePoint.Client;
+@{
+    ViewBag.Title = "CreateListitem";
+}
+
+<h2>Add a Item to </h2>
+
+<form method="post">
+    Add a item to list: <input type="text" name="NewItemTitle" value="" /> <input type="submit" name="submit" value="additem" />
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            List Item:
+        </th>
+    </tr>
+
+    @if (ViewBag.list != null)
+    {
+        foreach (ListItem item in ViewBag.list)
+        {
+            <tr>
+                <td>
+                    @{var Item = item["Title"].ToString();
+
+                        <div>
+                            @Html.DisplayName(Item)
+                        </div>
+                    }
+                </td>
+            </tr>
+
+
+        }
+    }
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<div style="" color="green">@ViewBag.Message</div>
+
+
+
